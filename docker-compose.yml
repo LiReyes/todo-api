@@ -1,0 +1,16 @@
+services:
+  db:
+    container_name: db
+    image: mariadb:10.4.32
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: todo-db
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db_data:/var/lib/mysql
+    restart: always
+
+volumes:
+  todo-vol:
+    external: false
