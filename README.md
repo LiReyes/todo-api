@@ -76,3 +76,57 @@ Esto iniciará el servidor en `http://127.0.0.1:8000`, y podrás acceder a la AP
 ```bash
 API URL = http://127.0.0.1:8000 o http://localhost:8000
 ```
+# Endpoint: http://localhost:8000/api/users/
+
+### Métodos Permitidos:
+- `GET`: Obtener una lista de usuarios o un usuario específico.
+- `POST`: Crear un nuevo usuario.
+- `PUT`: Actualizar un usuario existente.
+- `PATCH`: Actualizar parcialmente un usuario.
+- `DELETE`: Eliminar un usuario.
+
+### Filtros Disponibles:
+Puedes aplicar filtros para buscar usuarios según los siguientes campos:
+- `username`
+- `UserUsername`
+- `UserEmail`
+- `email`
+
+### Parámetros de Filtrado:
+- Para filtrar por un campo específico, agrega el parámetro `filter[<campo>]` en la consulta. Ejemplo: `filter[username]=john`.
+- Además, puedes usar el parámetro `sort` para ordenar los resultados, en DESC = '-'
+- `perPage` para limitar la cantidad de registros por página y habilita el enpaginado
+
+### Ejemplos:
+
+#### Filtrar por `username` en un `GET`:
+```bash
+GET http://localhost:8000/api/users?filter[username]=john&sort=-email&perPage=5
+```
+
+# Endpoint: http://localhost:8000/api/tasks/
+
+
+### Métodos Permitidos:
+- `GET`: Obtener una lista de tareas o una tarea específica.
+- `POST`: Crear una nueva tarea.
+- `PUT`: Actualizar una tarea existente.
+- `PATCH`: Actualizar parcialmente una tarea.
+- `DELETE`: Eliminar una tarea.
+
+### Filtros Disponibles:
+Puedes aplicar filtros para buscar tareas según los siguientes campos:
+- `TaskUser_id` (equivalente a `user_id`)
+- `TaskTitle` (equivalente a `title`)
+- `TaskDescription` (equivalente a `description`)
+- `TaskStatus` (equivalente a `status`)
+
+### Parámetros de Filtrado:
+- Para filtrar por un campo específico, agrega el parámetro `filter[<campo>]` en la consulta. Ejemplo: `filter[TaskUser_id]=1`.
+- Además, puedes usar el parámetro `sort` para ordenar los resultados y `perPage` para limitar la cantidad de registros por página.
+
+### Ejemplos:
+
+#### Filtrar por `TaskUser_id` en un `GET`:
+```bash
+GET http://localhost:8000/api/tasks?filter[TaskUser_id]=1
