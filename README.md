@@ -35,9 +35,23 @@ composer install
 composer update
 ```
 
+### 3. Copiar .env.example 
+
+Crear .env y copiar el contenido del .env.example
+y remplazar el aparto de la BD con estos valores:
+
+```bash
+DB_CONNECTION=mysql
+DB_HOST=localhost
+DB_PORT=3306
+DB_DATABASE=todo-db
+DB_USERNAME=root
+DB_PASSWORD=root
+```
+
 Esto descargará todas las dependencias especificadas en el archivo `composer.json` para el proyecto Laravel.
 
-### 3. Ejecutar migraciones y sembrado de datos
+### 4. Ejecutar migraciones y sembrado de datos
 
 Para crear las tablas en la base de datos y llenar con datos de prueba, ejecuta el siguiente comando:
 
@@ -47,7 +61,7 @@ php artisan migrate:refresh --seed
 
 Este comando refresca las migraciones y ejecuta las semillas, asegurando que tu base de datos esté lista para usarse.
 
-### 4. Levantar el servidor de desarrollo
+### 5. Levantar el servidor de desarrollo
 
 Finalmente, levanta el servidor de desarrollo de Laravel para comenzar a interactuar con la API:
 
