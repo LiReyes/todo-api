@@ -8,9 +8,9 @@ Este es un proyecto API basado en Laravel que utiliza MariaDB como base de datos
 ## Requisitos previos
 
 - [Docker](https://www.docker.com/products/docker-desktop) para ejecutar el contenedor de MariaDB.
-- [PHP](https://www.php.net/downloads.php) (recomendado PHP 8.x o superior).
+- [PHP](https://www.php.net/downloads.php) (recomendado PHP 8.2).
 - [Composer](https://getcomposer.org/) para gestionar las dependencias de PHP.
-- [Laravel](https://laravel.com/docs/9.x) (si prefieres usar la CLI de Laravel).
+- [Laravel](https://laravel.com/docs/9.x) (si se quiere usar el CLI de Laravel).
 
 ## Pasos para ejecutar el proyecto
 
